@@ -1,0 +1,243 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #99b5d6;
+  line-height: 1.6;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    padding-left: 1%;
+    background-color: #00005f;
+}
+
+.main_content {
+    margin-left: 200px;
+    margin-top: 1000px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  list-style-type: none;
+
+  li {
+    padding: 6px 0;
+
+    a {
+      position: relative;
+      display: block;
+      padding: 4px 0;
+      font-family: Lato, sans-serif;
+      color: #ecf0f1;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: 0.5s;
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: #3498db;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.5s;
+      }
+
+      &:hover {
+        color: #95a5a6;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+  }
+}
+
+#about {
+    text-align: center;
+    padding: 50px;
+}
+
+#about .profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#about h1 {
+    margin: 20px 0;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: #00005f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+}
+
+#projects {
+    padding: 50px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.project-card {
+    background: white;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+#skills {
+    padding: 50px;
+    text-align: center;
+}
+
+#skills ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#skills li {
+    display: inline-block;
+    margin: 10px;
+    background-color: #00005f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+#contact {
+    padding: 50px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#contact label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact button {
+    background-color: #00005f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #00005f;
+    color: white;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #007BFF;
+}
+
+@media (max-width: 768px) {
+    /* Stack sidebar links on smaller devices */
+    .sidebar {
+        width: 20%;
+    }
+    
+    .sidebar ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    /* Adjust project cards for mobile devices */
+    .project-card {
+        width: 80%;
+    }
+
+    /* Skills section alignment for mobile */
+    #skills li {
+        display: block;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Resize profile image for small devices */
+    #about .profile img {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Adjust button size for small screens */
+    .download-btn {
+        padding: 8px 16px;
+    }
+
+    /* Make contact form inputs larger for mobile devices */
+    #contact input, #contact textarea {
+        font-size: 16px;
+    }
+}
